@@ -1,0 +1,20 @@
+body{
+    background-color: rgb(251, 250, 250);
+}
+h1{
+    color: green;
+    text-align: center;
+    margin: auto;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 10px;
+}
+
+.home{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    display: block;
+    margin: 0px 100px 150px 80px;
+    padding: 45px;
+    background-color: white;
+}
+
