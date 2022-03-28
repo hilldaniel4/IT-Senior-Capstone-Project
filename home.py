@@ -20,3 +20,6 @@ def checkout():
 @app.route('/confirm')
 def confirm():
     return render_template('confirm.html')
+
+if __name__ == "__main__":
+    app.run(debug=True) 
