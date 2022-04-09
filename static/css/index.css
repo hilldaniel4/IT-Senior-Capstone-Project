@@ -8,7 +8,9 @@ h1{
     font-family: Georgia, 'Times New Roman', Times, serif;
     padding: 10px;
 }
-
+.navbar{
+    padding-left: 15pt;
+}
 .home{
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: center;
