@@ -35,4 +35,17 @@ h1{
 .btn-lg{
     margin-top: 10px;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    position:absolute;
+    bottom: 15px;
+    left: 15px;
+}
+.card-img-top{
+    width: 250px;
+    height: 250px;
+    object-fit: fill;
+}
+.card{
+    align-items: center;
+    height:32rem;
+    margin-top:10px;
 }

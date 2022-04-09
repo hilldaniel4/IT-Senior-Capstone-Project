@@ -32,9 +32,11 @@
         </div>
       </nav>
 	 
-	  
+	  <!--Accordion container to make it fit in the middle of the page.-->
 	  <div class="accordion-container">
+		  <!--Accordian for displaying each category of item.-->
 		<div class="accordion" id="accordionExample">
+			<!--Individual accordian tab.-->
 			<div class="accordion-item">
 			  <h2 class="accordion-header" id="headingOne">
 				<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -43,29 +45,53 @@
 			  </h2>
 			  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
 				<div class="accordion-body">
+					<!--Inside the accordian buttons, a grid is used to display items neatly.-->
 					<div class="grid-container">
 						<div class="row">
 						  <div class="col">
+							  <!--Cards are used for each item in the shop.-->
 							<div class="card" style="width: 18rem;">
-								<img src="..." class="card-img-top" alt="...">
+								<img src="static/apples.jpg" class="card-img-top" alt="3 apples.">
 								<div class="card-body">
-								  <h5 class="card-title">Card title</h5>
-								  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+								  <h5 class="card-title">Apples: $3.57</h5>
+								  <p class="card-text">6 Golden Delicious apples hand picked by local producers.</p>
 								  <a href="#" class="btn btn-success btn-lg">Go somewhere</a>
 								</div>
 							</div>
 						  </div>
 						  <div class="col">
 							<div class="card" style="width: 18rem;">
-								<img src="..." class="card-img-top" alt="...">
+								<img src="static/oranges.jpg" class="card-img-top" alt="Orange">
 								<div class="card-body">
-								  <h5 class="card-title">Card title</h5>
-								  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+								  <h5 class="card-title">Oranges: $1.79</h5>
+								  <p class="card-text">3 Florida Oranges, shipped fresh from northeastern Florida to our stores.</p>
 								  <a href="#" class="btn btn-success btn-lg">Go somewhere</a>
 								</div>
 							</div>
 						  </div>
 						</div>
+						<div class="row">
+							<div class="col">
+							  <div class="card" style="width: 18rem;">
+								  <img src="static/bananas.jpg" class="card-img-top" alt="Bundle of bananas.">
+								  <div class="card-body">
+									<h5 class="card-title">Bananas: $2.12</h5>
+									<p class="card-text">6 Golden Delicious apples hand picked by local producers.</p>
+									<a href="#" class="btn btn-success btn-lg">Go somewhere</a>
+								  </div>
+							  </div>
+							</div>
+							<div class="col">
+							  <div class="card" style="width: 18rem;">
+								  <img src="static/oranges.jpg" class="card-img-top" alt="Orange">
+								  <div class="card-body">
+									<h5 class="card-title">Oranges: $1.79</h5>
+									<p class="card-text">3 Florida Oranges, shipped fresh from northeastern Florida to our stores.</p>
+									<a href="#" class="btn btn-success btn-lg">Go somewhere</a>
+								  </div>
+							  </div>
+							</div>
+						  </div>
 					  </div>
 				</div>
 			  </div>
