@@ -27,7 +27,7 @@ h1{
 }
 .grid-container{
     display: grid;
-    grid-auto-flow: column;
+    grid-auto-flow: row;
     gap: 4px;
     align-items: center;
     justify-items: center;
@@ -48,4 +48,7 @@ h1{
     align-items: center;
     height:32rem;
     margin-top:10px;
+}
+.col{
+    width:max-content;
 }
