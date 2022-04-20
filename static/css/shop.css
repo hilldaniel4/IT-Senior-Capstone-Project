@@ -52,3 +52,26 @@ h1{
 .col{
     width:max-content;
 }
+#return{
+    color: green;
+    text-align: left;
+    margin: 0px 100px 10px 80px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 10px;
+}
+#confirm{
+    margin-top: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#form-header{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#order-total{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#checkout-form{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#form-container{
+    padding-bottom: 8em;
+}

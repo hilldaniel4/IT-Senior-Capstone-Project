@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 import pymongo
 from pymongo import MongoClient
+=======
+from pymongo import MongoClient
+client = MongoClient()
+
+>>>>>>> c0a61f6bdba45718aae7da9f024c34a7e025ae7e
 from flask import Flask, render_template, request, flash
 app = Flask(__name__)
 
