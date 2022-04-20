@@ -48,10 +48,19 @@ h1{
     align-items: center;
     height:32rem;
     margin-top:10px;
+    box-sizing: border-box;
+    float: left;
 }
 .col{
     width:max-content;
+    float: left;
 }
+
+.row{
+    display: inline-block;
+    position: relative;
+}
+
 #return{
     color: green;
     text-align: left;

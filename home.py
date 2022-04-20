@@ -1,12 +1,7 @@
-<<<<<<< HEAD
+from crypt import methods
 import pymongo
 from pymongo import MongoClient
-=======
-from pymongo import MongoClient
-client = MongoClient()
-
->>>>>>> c0a61f6bdba45718aae7da9f024c34a7e025ae7e
-from flask import Flask, render_template, request, flash
+from flask import Flask, render_template, request, flash,redirect, url_for
 app = Flask(__name__)
 
 #Connects python to MongoDB
@@ -26,6 +21,22 @@ def index():
 def shop():
     return render_template('shop.html')
 
+#Sends user info to database
+@app.route('/add_user', methods = ["GET","POST"])
+def add_user():
+    usr_name = request.form.get('usrName')
+    usr_email = request.form.get('usrEmail')
+    usr_add1 = request.form.get('usrAdd1')
+    usr_add2 = request.form.get('usrAdd2')
+    usr_city = request.form.get('usrCity')
+    usr_state = request.form.get('usrState')
+    usr_zip = request.form.get('usrZip')
+    if request.method == "POST":
+
+       print(usr_name, usr_email,usr_add1,usr_add2,usr_city,usr_state,usr_zip)
+        #return request.form.get('usrName'),request.form.get('usrEmail'),request.form.get('usrAdd1'),request.form.get('usrAdd2'),request.form.get('usrCity'),request.form.get('usrState'),request.form.get('usrZip')
+    
+
 #Renders Checkout page
 @app.route('/checkout')
 def checkout():
@@ -35,6 +46,8 @@ def checkout():
 @app.route('/confirm')
 def confirm():
     return render_template('confirm.html')
+
+
 
 if __name__ == "__main__":
     app.run(debug=True) 
