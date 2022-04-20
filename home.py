@@ -1,5 +1,14 @@
+import pymongo
+from pymongo import MongoClient
 from flask import Flask, render_template, request, flash
 app = Flask(__name__)
+
+#Connects python to MongoDB
+cluster = MongoClient("mongodb+srv://ShawnTaylor:Seniorcapstone1@seniorcapstone.ksiqj.mongodb.net/GreenGrocery?retryWrites=true&w=majority")
+#DB name is GreenGrocery
+db = cluster["GreenGrocery"]
+#Collections name is test
+collection = db["test"]
 
 #Renders Home page.
 @app.route("/")
