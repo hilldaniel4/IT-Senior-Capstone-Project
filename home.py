@@ -34,7 +34,7 @@ def add_user():
         usr_city = request.form.get('usrCity')
         usr_state = request.form.get('usrState')
         usr_zip = request.form.get('usrZip')
-        if usr_name != "" and usr_email != "" and usr_add1 != "" and usr_add2 != "" and usr_city != "" and usr_state != "" and usr_zip != "":
+        if usr_name != "" and usr_email != "" and usr_add1 != "" and usr_add2 != "" or usr_add2 == "" and usr_city != "" and usr_state != "" and usr_zip != "":
             usrInfo = collection.insert_one({"name": usr_name, "email": usr_email, "add1": usr_add1, "add2": usr_add2, "city": usr_city, "state": usr_state, "zip": usr_zip})
             return("data added to database")
         else:
