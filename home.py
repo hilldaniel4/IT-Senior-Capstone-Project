@@ -39,6 +39,7 @@ def add_user():
         usr_zip = request.form.get('usrZip')
         if usr_name != "" and usr_email != "" and usr_add1 != "" and usr_add2 != "" or usr_add2 == "" and usr_city != "" and usr_state != "" and usr_zip != "":
             usrInfo = collection.insert_one({"name": usr_name, "email": usr_email, "add1": usr_add1, "add2": usr_add2, "city": usr_city, "state": usr_state, "zip": usr_zip, "items": items})
+            get_items()
             return render_template('confirm.html')
         else:
             return("fill the form to process order")
@@ -46,11 +47,11 @@ def add_user():
       # print(usr_name, usr_email,usr_add1,usr_add2,usr_city,usr_state,usr_zip)
         #return request.form.get('usrName'),request.form.get('usrEmail'),request.form.get('usrAdd1'),request.form.get('usrAdd2'),request.form.get('usrCity'),request.form.get('usrState'),request.form.get('usrZip')
 
-#Not sure if we should use this seperate GET method or if we should make the ('/confirm') method into our GET.
-#Maybe if we do that, we could call it from within the ("/add_user") method on line 42 to run the GET at the same time we render the page?
+#I think we can call this from within the POST above (I added it on line 42 to test, remove it if it breaks something).
+#We also need a way to make sure it only calls the most recent entry in the db collection. It may be doing that by default, can't tell.
 @app.route('/get_items', methods=["GET"])
 def get_items():
-    items = collection.find({}, {"items": "Dont know what to put here"})
+    items = collection.find({"items": 1 }) #need something other than 1 here to call all the items in the collection
     return render_template('confirm.html', items = items)
     
 
