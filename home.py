@@ -27,6 +27,8 @@ def shop():
 @app.route('/add_user', methods = ["POST"])
 def add_user():
     if request.method == "POST":
+
+        items = request.form.get('item')
         usr_name = request.form.get('usrName')
         usr_email = request.form.get('usrEmail')
         usr_add1 = request.form.get('usrAdd1')
@@ -35,8 +37,8 @@ def add_user():
         usr_state = request.form.get('usrState')
         usr_zip = request.form.get('usrZip')
         if usr_name != "" and usr_email != "" and usr_add1 != "" and usr_add2 != "" or usr_add2 == "" and usr_city != "" and usr_state != "" and usr_zip != "":
-            usrInfo = collection.insert_one({"name": usr_name, "email": usr_email, "add1": usr_add1, "add2": usr_add2, "city": usr_city, "state": usr_state, "zip": usr_zip})
-            return("data added to database")
+            usrInfo = collection.insert_one({"name": usr_name, "email": usr_email, "add1": usr_add1, "add2": usr_add2, "city": usr_city, "state": usr_state, "zip": usr_zip, "items": items})
+            return render_template('confirm.html')
         else:
             return("fill the form to process order")
 
