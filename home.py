@@ -26,9 +26,10 @@ def shop():
 #Sends user info to database
 @app.route('/add_user', methods = ["POST"])
 def add_user():
+    
+    
     if request.method == "POST":
-
-        items = request.form.get('item')
+        items = request.form.getlist('item')
         usr_name = request.form.get('usrName')
         usr_email = request.form.get('usrEmail')
         usr_add1 = request.form.get('usrAdd1')
