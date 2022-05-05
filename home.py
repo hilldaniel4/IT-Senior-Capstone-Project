@@ -45,6 +45,13 @@ def add_user():
 
       # print(usr_name, usr_email,usr_add1,usr_add2,usr_city,usr_state,usr_zip)
         #return request.form.get('usrName'),request.form.get('usrEmail'),request.form.get('usrAdd1'),request.form.get('usrAdd2'),request.form.get('usrCity'),request.form.get('usrState'),request.form.get('usrZip')
+
+#Not sure if we should use this seperate GET method or if we should make the ('/confirm') method into our GET.
+#Maybe if we do that, we could call it from within the ("/add_user") method on line 42 to run the GET at the same time we render the page?
+@app.route('/get_items', methods=["GET"])
+def get_items():
+    items = collection.find({}, {"items": "Dont know what to put here"})
+    return render_template('confirm.html', items = items)
     
 
 #Renders Checkout page

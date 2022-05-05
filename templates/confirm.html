@@ -34,13 +34,16 @@
       <div class ="card">
       <h3 class="head-text">Your Items:</h3>
       <ul>
-
+        <!--This is the part I can't figure out-->
+        {% for item in items %}
+          <li>{{item[item]}}</li>
+        {% endfor %}
       </ul>
   
       <h3 class="head-text">Your Shipping Info:</h3>
 
       <p>
-
+        <!--We'll need something similar here-->
       </p>
     </div>
 
