@@ -32,25 +32,24 @@
       <h1>Order Info:</h1>
       
       <div class ="card">
-      <h3 class="head-text">Your Items:</h3>
-      <ul>
-        <!--This might work when the page is able to GET from the db-->
-       <!-- {% for item in items %}
-          <li>{{items[items]}}</li>
-        {% endfor %} -->
-        {% for item in items %}
-        <p>{{ items['name'] }} <i>({{ items['items']}})</i></p>
-        <h1>{{ items['usr_name'] }} <i>({{ items['items']}})</h1>
-         <!--<p>{{ items.usr_name }} 
-         ({{ items.items }})</p> -->
+      <h3 class="head-text">Your Items: {% for item in items %}
+        <h4>({{ item['items']}})</h4>
      {% endfor %}
-      </ul>
+      </h3>
+      <ul>
 
   
       <h3 class="head-text">Your Shipping Info:</h3>
 
       <p>
-        <!--We'll need something similar here-->
+        {% for item in items %}
+        <p>{{ item['name'] }}</p>
+        <p>{{ item['email'] }} </p>
+        <p>{{ item['add1'] }} </p>
+        <p>{{ item['city'] }} </p>
+        <p>{{ item['state'] }} </p>
+        <p>{{ item['zip'] }} </p>
+     {% endfor %}
       </p>
     </div>
 
