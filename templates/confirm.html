@@ -35,10 +35,16 @@
       <h3 class="head-text">Your Items:</h3>
       <ul>
         <!--This might work when the page is able to GET from the db-->
+       <!-- {% for item in items %}
+          <li>{{items[items]}}</li>
+        {% endfor %} -->
         {% for item in items %}
-          <li>{{items[item]}}</li>
-        {% endfor %}
+        <div class="item">
+            <p>{{ item['name'] }} <i>({{ item['items']}})</i></p>
+        </div>
+    {% endfor %}
       </ul>
+
   
       <h3 class="head-text">Your Shipping Info:</h3>
 

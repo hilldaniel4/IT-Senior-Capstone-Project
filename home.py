@@ -24,7 +24,7 @@ def shop():
     return render_template('shop.html')
 
 #Sends user info to database
-@app.route('/add_user', methods = ["POST"])
+@app.route('/add_user', methods = ["POST", "GET"])
 def add_user():
     
     
@@ -39,20 +39,22 @@ def add_user():
         usr_zip = request.form.get('usrZip')
         if usr_name != "" and usr_email != "" and usr_add1 != "" and usr_add2 != "" or usr_add2 == "" and usr_city != "" and usr_state != "" and usr_zip != "":
             usrInfo = collection.insert_one({"name": usr_name, "email": usr_email, "add1": usr_add1, "add2": usr_add2, "city": usr_city, "state": usr_state, "zip": usr_zip, "items": items})
-            get_items()
-            return render_template('confirm.html')
-        else:
-            return("fill the form to process order")
-
-      # print(usr_name, usr_email,usr_add1,usr_add2,usr_city,usr_state,usr_zip)
-        #return request.form.get('usrName'),request.form.get('usrEmail'),request.form.get('usrAdd1'),request.form.get('usrAdd2'),request.form.get('usrCity'),request.form.get('usrState'),request.form.get('usrZip')
+            #items = collection.find_one() is only returning the first user data entered. Have to  figure out how to grab the most recent data
+            items = collection.find_one()
+            print(items)
+        return render_template('confirm.html',collection = items)
+        #else:
+            #return("fill the form to process order")
 
 #I think we can call this from within the POST above (I added it on line 42 to test, remove it if it breaks something).
 #We also need a way to make sure it only calls the most recent entry in the db collection. It may be doing that by default, can't tell.
-@app.route('/get_items', methods=["GET"])
-def get_items():
-    items = collection.find({"items": 1 }) #need something other than 1 here to call all the items in the collection
-    return render_template('confirm.html', items = items)
+#@app.route('/get_items', methods=["GET"],)
+#def get_items():
+    #if request.method == "GET":
+        #items = collection.find() #need something other than 1 here to call all the items in the collection
+        #return render_template('confirm.html', collection = items)
+    #else:
+        #return("Data not found")
     
 
 #Renders Checkout page
