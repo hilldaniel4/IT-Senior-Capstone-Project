@@ -39,10 +39,11 @@
           <li>{{items[items]}}</li>
         {% endfor %} -->
         {% for item in items %}
-        <div class="item">
-            <p>{{ item['name'] }} <i>({{ item['items']}})</i></p>
-        </div>
-    {% endfor %}
+        <p>{{ items['name'] }} <i>({{ items['items']}})</i></p>
+        <h1>{{ items['usr_name'] }} <i>({{ items['items']}})</h1>
+         <!--<p>{{ items.usr_name }} 
+         ({{ items.items }})</p> -->
+     {% endfor %}
       </ul>
 
   
