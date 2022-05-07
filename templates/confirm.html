@@ -32,9 +32,12 @@
       <h1>Order Info:</h1>
       
       <div class ="card">
-      <h3 class="head-text">Your Items: {% for item in items %}
-        <h4>({{ item['items']}})</h4>
-     {% endfor %}
+      <h3 class="head-text">Your Items: 
+        {% for item in items %}
+          {% for elem in items %}
+            <h4>{{ elem['items']}}</h4>
+          {% endfor %}
+        {% endfor %}
       </h3>
       <ul>
 

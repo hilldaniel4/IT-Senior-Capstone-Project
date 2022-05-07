@@ -38,7 +38,9 @@ def add_user():
         usr_state = request.form.get('usrState')
         usr_zip = request.form.get('usrZip')
         if usr_name != "" and usr_email != "" and usr_add1 != "" and usr_add2 != "" or usr_add2 == "" and usr_city != "" and usr_state != "" and usr_zip != "":
-            usrInfo = collection.insert_one({"name": usr_name, "email": usr_email, "add1": usr_add1, "add2": usr_add2, "city": usr_city, "state": usr_state, "zip": usr_zip, "items": items})
+            usrInfo = collection.insert_one({"name": usr_name, "email": usr_email, "add1": usr_add1, "add2": usr_add2, "city": usr_city, "state": usr_state,
+            "zip": usr_zip, "items": items})
+            
             myquery = {"_id": usrInfo.inserted_id}
             items = list(collection.find(myquery))
             #print(items)
