@@ -29,7 +29,7 @@ def add_user():
     
     
     if request.method == "POST":
-        items = request.form.getlist('item')
+        products = request.form.getlist('products')
         usr_name = request.form.get('usrName')
         usr_email = request.form.get('usrEmail')
         usr_add1 = request.form.get('usrAdd1')
@@ -39,13 +39,13 @@ def add_user():
         usr_zip = request.form.get('usrZip')
         if usr_name != "" and usr_email != "" and usr_add1 != "" and usr_add2 != "" or usr_add2 == "" and usr_city != "" and usr_state != "" and usr_zip != "":
             usrInfo = collection.insert_one({"name": usr_name, "email": usr_email, "add1": usr_add1, "add2": usr_add2, "city": usr_city, "state": usr_state,
-            "zip": usr_zip, "items": items})
+            "zip": usr_zip, "products": products})
             
             myquery = {"_id": usrInfo.inserted_id}
             items = list(collection.find(myquery))
             #print(items)
             print(usrInfo.inserted_id)
-        return render_template('confirm.html',items = items)
+        return render_template('confirm.html',items = items, products = products)
         #else:
             #return("fill the form to process order")
 
