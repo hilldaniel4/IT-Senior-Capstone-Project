@@ -27,4 +27,15 @@ h1{
 }
 .card{
     margin: 0px 90px 150px 90px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+p{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-left: 16px;
+    font-size: 16pt;
+}
+.product{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16pt;
 }

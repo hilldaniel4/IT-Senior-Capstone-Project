@@ -1,5 +1,6 @@
 # IT-Senior-Capstone-Project
 IT Senior Capstone group project using Python + Flask
+Uses pymongo to pass and get data from a MongoDB.
 
 To run use the following commands:
 

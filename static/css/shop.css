@@ -91,3 +91,29 @@ h1{
 #form-container{
     padding-bottom: 8em;
 }
+.form-check{
+    position:absolute;
+    bottom: 10px;
+    left: 10px;
+}
+#inputName4{
+    min-width: max-content;
+}
+#inputEmail4{
+    min-width: max-content;
+}
+#inputAddress{
+    min-width: max-content;
+}
+#inputAddress2{
+    min-width: max-content;
+}
+#inputCity{
+    min-width: max-content;
+}
+#inputState{
+    min-width: max-content;
+}
+#inputZip{
+    min-width: max-content;
+}

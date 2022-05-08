@@ -46,21 +46,6 @@ def add_user():
             #print(items)
             print(usrInfo.inserted_id)
         return render_template('confirm.html',items = items, products = products)
-        #else:
-            #return("fill the form to process order")
-
-    
-
-#Renders Checkout page
-@app.route('/checkout')
-def checkout():
-    return render_template('checkout.html')
-
-#Renders Order Confirmation page
-@app.route('/confirm')
-def confirm():
-    return render_template('confirm.html')
-
 
 
 if __name__ == "__main__":
