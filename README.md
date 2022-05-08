@@ -1,8 +1,12 @@
 # IT-Senior-Capstone-Project
-IT Senior Capstone group project using Python + Flask
-Uses pymongo to pass and get data from a MongoDB.
+IT Senior Capstone group project using Python + Flask.
+Pymongo tools are used to connect the program with a MongoDB cluster which stores and returns data from the app.
 
-To run use the following commands:
+The user navigates to the home page and selects items they want to add to their cart. Once they have selected any desired items to add to their cart,
+they must fill out the required shipping information in the form below the available products. Once they have finished and press the Confirm Order
+button, they are taken to an order confirmation page which has their shipping information and items they selected listed.
+
+To run the app use the following commands:
 
 pip install flask
 

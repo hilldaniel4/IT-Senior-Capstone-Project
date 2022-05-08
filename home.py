@@ -8,9 +8,9 @@ app = Flask(__name__)
 
 #Connects python to MongoDB
 cluster = pym.MongoClient("mongodb+srv://test_db:Password123456@cluster0.adys6.mongodb.net/user_db?retryWrites=true&w=majority")
-#DB name is GreenGrocery
+#DB name is user_db
 db = cluster["user_db"]
-#Collections name is test
+#Collections name is user_collection
 collection = db["user_collection"]
 
 #Renders Home page.
@@ -23,7 +23,7 @@ def index():
 def shop():
     return render_template('shop.html')
 
-#Sends user info to database
+#Sends user info to database and retrieves it
 @app.route('/add_user', methods = ["POST", "GET"])
 def add_user():
     
@@ -38,12 +38,11 @@ def add_user():
         usr_state = request.form.get('usrState')
         usr_zip = request.form.get('usrZip')
         if usr_name != "" and usr_email != "" and usr_add1 != "" and usr_add2 != "" or usr_add2 == "" and usr_city != "" and usr_state != "" and usr_zip != "":
-            usrInfo = collection.insert_one({"name": usr_name, "email": usr_email, "add1": usr_add1, "add2": usr_add2, "city": usr_city, "state": usr_state,
-            "zip": usr_zip, "products": products})
+            usrInfo = collection.insert_one({"name": usr_name, "email": usr_email, "add1": usr_add1,
+            "add2": usr_add2, "city": usr_city, "state": usr_state, "zip": usr_zip, "products": products})
             
             myquery = {"_id": usrInfo.inserted_id}
             items = list(collection.find(myquery))
-            #print(items)
             print(usrInfo.inserted_id)
         return render_template('confirm.html',items = items, products = products)
 
